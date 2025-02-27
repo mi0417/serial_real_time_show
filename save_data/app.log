@@ -1,0 +1,595 @@
+2025-02-27 11:06:38,662 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:38,663 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:06:41,261 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:06:41,261 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:41,277 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:41,286 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:06:41,287 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:42,915 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:06:42,916 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000023D82D07E20>
+2025-02-27 11:06:42,919 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:06:43,941 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:06:43,964 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:06:44,035 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:44,043 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:06:44,043 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:06:44,045 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:06:44,046 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000023D82D3C0D0>
+2025-02-27 11:06:44,049 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:09:41,239 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:09:41,240 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:09:46,190 - logger - INFO - 当前索引:0
+2025-02-27 11:09:46,190 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:09:46,190 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:09:46,205 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:09:46,205 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:09:46,206 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:09:46,206 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:09:46,207 - logger - INFO - 设置索引:0
+2025-02-27 11:10:15,480 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:10:15,481 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E7EBC8EDD0>
+2025-02-27 11:10:15,483 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:10:29,952 - logger - INFO - 当前索引:1
+2025-02-27 11:10:29,952 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:10:29,986 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:10:30,054 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:10:30,054 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:10:30,054 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:10:30,055 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:10:30,056 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:10:30,056 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E7EC1C6B00>
+2025-02-27 11:10:30,057 - logger - INFO - 设置索引:1
+2025-02-27 11:10:30,070 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:10:48,770 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:10:48,802 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:14:22,954 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:22,956 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:14:28,677 - logger - INFO - 当前索引:0
+2025-02-27 11:14:28,678 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:14:28,678 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:28,686 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:28,687 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:14:28,687 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:14:28,688 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:28,690 - logger - INFO - 设置索引:0
+2025-02-27 11:14:35,878 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:14:35,879 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622EEF0>
+2025-02-27 11:14:35,881 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:14:51,268 - logger - INFO - 当前索引:1
+2025-02-27 11:14:51,268 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:14:51,292 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:14:51,358 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:51,359 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:14:51,359 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:14:51,359 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:14:51,360 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:14:51,360 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622EF80>
+2025-02-27 11:14:51,361 - logger - INFO - 设置索引:1
+2025-02-27 11:14:51,371 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:14:55,547 - logger - INFO - 下拉框6当前选择的串口:COM4
+2025-02-27 11:14:55,548 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F0A0>
+2025-02-27 11:14:55,576 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:15:00,254 - logger - INFO - 当前索引:0
+2025-02-27 11:15:00,254 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:15:00,255 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:00,263 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:00,264 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:15:00,264 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:15:00,264 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:00,275 - logger - INFO - 设置索引:0
+2025-02-27 11:15:00,762 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 11:15:06,574 - logger - INFO - 下拉框6当前选择的串口:COM15
+2025-02-27 11:15:06,575 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F010>
+2025-02-27 11:15:06,578 - logger - DEBUG - 成功打开串口: COM15
+2025-02-27 11:15:09,616 - logger - INFO - 当前索引:0
+2025-02-27 11:15:09,617 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:15:09,643 - logger - DEBUG - 串口COM15已关闭
+2025-02-27 11:15:09,700 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:09,701 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:15:09,701 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:15:09,702 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:09,704 - logger - INFO - 设置索引:0
+2025-02-27 11:15:11,577 - logger - INFO - 下拉框6当前选择的串口:COM18
+2025-02-27 11:15:11,578 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F1C0>
+2025-02-27 11:15:11,580 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 11:15:47,105 - logger - INFO - 当前索引:2
+2025-02-27 11:15:47,105 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:15:47,129 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 11:15:47,134 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 11:15:47,237 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:47,238 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:15:47,238 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:15:47,239 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:15:47,240 - logger - INFO - 下拉框6当前选择的串口:COM18
+2025-02-27 11:15:47,240 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F250>
+2025-02-27 11:15:47,241 - logger - INFO - 设置索引:2
+2025-02-27 11:15:47,250 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 11:15:49,892 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:15:49,893 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F370>
+2025-02-27 11:15:49,918 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 11:15:49,921 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:16:55,265 - logger - INFO - 当前索引:0
+2025-02-27 11:16:55,267 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 11:16:55,290 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 11:16:55,312 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:16:55,313 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:16:55,313 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 11:16:55,314 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:16:55,315 - logger - INFO - 设置索引:0
+2025-02-27 11:16:56,380 - logger - INFO - 下拉框6当前选择的串口:COM16
+2025-02-27 11:16:56,380 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001A04622F5B0>
+2025-02-27 11:16:56,383 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 11:26:57,853 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:26:57,854 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:28:23,454 - logger - INFO - 当前索引:0
+2025-02-27 11:39:40,233 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,234 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:39:40,236 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 11:39:40,237 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 11:39:40,237 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,259 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,260 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,260 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,260 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,262 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:40,262 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,587 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,588 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 11:39:47,589 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 11:39:47,590 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 11:39:47,591 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,604 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,606 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,606 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,607 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,607 - logger - DEBUG - 没有打开的串口
+2025-02-27 11:39:47,607 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:14:43,855 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:14:43,856 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:14:43,859 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:14:43,861 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:14:43,862 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:14:43,863 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:14:43,863 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:14:43,865 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:14:51,699 - logger - INFO - 当前索引:0
+2025-02-27 13:14:51,699 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:14:51,699 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:14:51,708 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:14:51,708 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:14:51,709 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:14:51,709 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:14:51,710 - logger - INFO - 设置索引:0
+2025-02-27 13:15:00,757 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:15:00,757 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000011A87A62E60>
+2025-02-27 13:15:00,767 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:15:11,759 - logger - INFO - 当前索引:0
+2025-02-27 13:15:11,759 - logger - INFO - 下拉框2当前选择的串口:
+2025-02-27 13:15:11,762 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:15:11,771 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:15:11,773 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:15:11,773 - logger - INFO - 下拉框2当前选择的串口:close
+2025-02-27 13:15:11,773 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:15:11,774 - logger - INFO - 设置索引:0
+2025-02-27 13:15:13,302 - logger - INFO - 下拉框2当前选择的串口:COM16
+2025-02-27 13:15:13,302 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000011A87FA2C20>
+2025-02-27 13:15:13,302 - logger - DEBUG - 打开串口 COM16 失败: could not open port 'COM16': PermissionError(13, '拒绝访问。', None, 5)
+2025-02-27 13:22:28,975 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:28,975 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:28,977 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:22:28,977 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:22:28,977 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:22:28,980 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:22:28,980 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:22:28,982 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:22:31,125 - logger - INFO - 当前索引:0
+2025-02-27 13:22:31,131 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:22:31,131 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:31,140 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:31,141 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:31,141 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:22:31,141 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:31,144 - logger - INFO - 设置索引:0
+2025-02-27 13:22:32,750 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:22:32,750 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000002698423EE60>
+2025-02-27 13:22:32,756 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:22:33,899 - logger - INFO - 当前索引:0
+2025-02-27 13:22:33,900 - logger - INFO - 下拉框2当前选择的串口:
+2025-02-27 13:22:33,900 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:33,900 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:33,909 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:33,909 - logger - INFO - 下拉框2当前选择的串口:close
+2025-02-27 13:22:33,909 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:33,911 - logger - INFO - 设置索引:0
+2025-02-27 13:22:35,011 - logger - INFO - 下拉框2当前选择的串口:COM16
+2025-02-27 13:22:35,011 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000026984362C20>
+2025-02-27 13:22:35,011 - logger - DEBUG - 打开串口 COM16 失败: could not open port 'COM16': PermissionError(13, '拒绝访问。', None, 5)
+2025-02-27 13:22:35,016 - logger - DEBUG - log_list: Port2打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:22:39,669 - logger - INFO - 当前索引:1
+2025-02-27 13:22:39,669 - logger - INFO - 下拉框2当前选择的串口:
+2025-02-27 13:22:39,669 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:39,679 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:39,679 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:39,679 - logger - INFO - 下拉框2当前选择的串口:close
+2025-02-27 13:22:39,679 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:39,687 - logger - INFO - 下拉框2当前选择的串口:COM16
+2025-02-27 13:22:39,687 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000026984362CB0>
+2025-02-27 13:22:39,689 - logger - INFO - 设置索引:1
+2025-02-27 13:22:39,690 - logger - DEBUG - 打开串口 COM16 失败: could not open port 'COM16': PermissionError(13, '拒绝访问。', None, 5)
+2025-02-27 13:22:39,718 - logger - DEBUG - log_list: Port2打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:22:40,912 - logger - INFO - 下拉框2当前选择的串口:COM18
+2025-02-27 13:22:40,912 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000026984362D40>
+2025-02-27 13:22:40,912 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:22:47,165 - logger - INFO - 当前索引:0
+2025-02-27 13:22:47,165 - logger - INFO - 下拉框3当前选择的串口:
+2025-02-27 13:22:47,165 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:47,178 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:47,179 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:47,179 - logger - INFO - 下拉框3当前选择的串口:close
+2025-02-27 13:22:47,179 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:47,180 - logger - INFO - 设置索引:0
+2025-02-27 13:22:48,508 - logger - INFO - 下拉框3当前选择的串口:COM17
+2025-02-27 13:22:48,508 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000026984362E60>
+2025-02-27 13:22:48,514 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:22:54,938 - logger - INFO - 当前索引:3
+2025-02-27 13:22:54,938 - logger - INFO - 下拉框3当前选择的串口:
+2025-02-27 13:22:54,945 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:22:54,969 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:22:55,052 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:55,056 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:22:55,056 - logger - INFO - 下拉框3当前选择的串口:close
+2025-02-27 13:22:55,056 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:22:55,058 - logger - INFO - 下拉框3当前选择的串口:COM17
+2025-02-27 13:22:55,058 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000026984362EF0>
+2025-02-27 13:22:55,058 - logger - INFO - 设置索引:3
+2025-02-27 13:22:55,070 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:22:55,972 - logger - INFO - 下拉框3当前选择的串口:close
+2025-02-27 13:22:55,989 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:22:56,002 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:29:42,217 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:29:42,218 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:29:42,218 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:29:42,218 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:29:42,218 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:29:42,222 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:29:42,222 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:29:42,222 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:29:44,533 - logger - INFO - 当前索引:0
+2025-02-27 13:29:44,533 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:29:44,533 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:29:44,545 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:29:44,545 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:29:44,545 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:29:44,546 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:29:44,548 - logger - DEBUG - log_list: Port1关闭串口
+2025-02-27 13:29:44,548 - logger - INFO - 设置索引:0
+2025-02-27 13:29:46,129 - logger - INFO - 下拉框1当前选择的串口:COM4
+2025-02-27 13:29:46,129 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000024644672C20>
+2025-02-27 13:29:51,253 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 13:29:51,263 - logger - DEBUG - log_list: Port1打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:30:22,533 - logger - INFO - 当前索引:5
+2025-02-27 13:30:22,533 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:30:22,533 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:30:22,545 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:30:22,545 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:30:22,545 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:30:22,545 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:30:22,546 - logger - DEBUG - log_list: Port1关闭串口
+2025-02-27 13:30:22,547 - logger - INFO - 下拉框1当前选择的串口:COM4
+2025-02-27 13:30:22,547 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000024644672DD0>
+2025-02-27 13:30:22,548 - logger - INFO - 设置索引:5
+2025-02-27 13:30:23,467 - logger - INFO - 下拉框1当前选择的串口:COM17
+2025-02-27 13:30:23,467 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000024644672E60>
+2025-02-27 13:30:23,472 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:30:27,730 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 13:30:27,735 - logger - DEBUG - log_list: Port1打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:30:30,783 - logger - INFO - 当前索引:3
+2025-02-27 13:30:30,783 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:30:30,804 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:30:30,805 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:30:30,912 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:30:30,912 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:30:30,912 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:30:30,913 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:30:30,914 - logger - DEBUG - log_list: Port1关闭串口
+2025-02-27 13:30:30,914 - logger - INFO - 下拉框1当前选择的串口:COM17
+2025-02-27 13:30:30,914 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000024644673010>
+2025-02-27 13:30:30,915 - logger - INFO - 设置索引:3
+2025-02-27 13:30:30,924 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:30:32,263 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:30:32,263 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000024644673130>
+2025-02-27 13:30:32,302 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:30:32,305 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:31:18,140 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:18,142 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:18,143 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:31:18,145 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:31:18,146 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:31:18,147 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:31:18,147 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:31:18,148 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:31:20,061 - logger - INFO - 当前索引:0
+2025-02-27 13:31:20,061 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:31:20,061 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:20,071 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:20,071 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:20,071 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:20,071 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:20,076 - logger - INFO - 设置索引:0
+2025-02-27 13:31:22,512 - logger - INFO - 当前索引:0
+2025-02-27 13:31:22,512 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:31:22,512 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:22,512 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:22,512 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:22,512 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:22,512 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:22,527 - logger - INFO - 设置索引:0
+2025-02-27 13:31:23,464 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:31:23,464 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000013DBE4BEE60>
+2025-02-27 13:31:23,470 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:31:24,696 - logger - INFO - 当前索引:1
+2025-02-27 13:31:24,701 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:31:24,721 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:31:24,789 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:24,789 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:24,789 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:24,789 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:24,789 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:31:24,789 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000013DBE5E2B90>
+2025-02-27 13:31:24,789 - logger - INFO - 设置索引:1
+2025-02-27 13:31:24,804 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:31:26,719 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:26,725 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:31:26,749 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:31:35,298 - logger - INFO - 当前索引:0
+2025-02-27 13:31:35,302 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:31:35,302 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:35,309 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:35,309 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:35,309 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:35,309 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:35,313 - logger - INFO - 设置索引:0
+2025-02-27 13:31:36,431 - logger - INFO - 下拉框1当前选择的串口:COM4
+2025-02-27 13:31:36,431 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000013DBE5E2C20>
+2025-02-27 13:31:41,619 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 13:31:41,619 - logger - DEBUG - log_list: Port1打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:31:47,087 - logger - INFO - 当前索引:5
+2025-02-27 13:31:47,093 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:31:47,093 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:47,101 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:47,102 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:31:47,102 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:31:47,102 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:31:47,103 - logger - INFO - 下拉框1当前选择的串口:COM4
+2025-02-27 13:31:47,104 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000013DBE5E2D40>
+2025-02-27 13:31:47,104 - logger - INFO - 设置索引:5
+2025-02-27 13:31:48,832 - logger - INFO - 下拉框1当前选择的串口:COM15
+2025-02-27 13:31:48,832 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x0000013DBE5E2DD0>
+2025-02-27 13:31:48,837 - logger - DEBUG - 成功打开串口: COM15
+2025-02-27 13:31:52,285 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 13:31:52,291 - logger - DEBUG - log_list: Port1打开串口失败，请检查连接或重新插拔串口
+2025-02-27 13:32:49,503 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:49,503 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:32:49,506 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:32:49,507 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:32:49,508 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:32:49,508 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:32:49,509 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:32:49,510 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:32:51,276 - logger - INFO - 当前索引:0
+2025-02-27 13:32:51,276 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:32:51,276 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:51,287 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:51,287 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:32:51,288 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:32:51,288 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:51,289 - logger - INFO - 设置索引:0
+2025-02-27 13:32:54,021 - logger - INFO - 当前索引:0
+2025-02-27 13:32:54,021 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:32:54,021 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:54,039 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:54,039 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:32:54,039 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:32:54,041 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:54,041 - logger - INFO - 设置索引:0
+2025-02-27 13:32:55,051 - logger - INFO - 下拉框1当前选择的串口:COM18
+2025-02-27 13:32:55,051 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001BD5D0DEE60>
+2025-02-27 13:32:55,054 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:32:55,058 - logger - DEBUG - log_list: Port1打开串口成功
+2025-02-27 13:32:56,126 - logger - INFO - 当前索引:2
+2025-02-27 13:32:56,126 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:32:56,152 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 13:32:56,175 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:56,176 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:32:56,177 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:32:56,177 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:32:56,177 - logger - INFO - 下拉框1当前选择的串口:COM18
+2025-02-27 13:32:56,177 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001BD5D222C20>
+2025-02-27 13:32:56,177 - logger - INFO - 设置索引:2
+2025-02-27 13:32:56,190 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:32:56,203 - logger - DEBUG - log_list: Port1打开串口成功
+2025-02-27 13:32:57,610 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:32:57,610 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001BD5D222DD0>
+2025-02-27 13:32:57,632 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 13:32:57,634 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:32:57,636 - logger - DEBUG - log_list: Port1打开串口成功
+2025-02-27 13:33:03,944 - logger - INFO - 当前索引:1
+2025-02-27 13:33:03,944 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:33:03,966 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:33:03,968 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:33:04,079 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:33:04,080 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:33:04,080 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:33:04,080 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:33:04,081 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:33:04,082 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001BD5D222EF0>
+2025-02-27 13:33:04,083 - logger - INFO - 设置索引:1
+2025-02-27 13:33:04,093 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:33:04,111 - logger - DEBUG - log_list: Port1打开串口成功
+2025-02-27 13:33:06,802 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:33:06,802 - logger - DEBUG - log_list: Port1关闭串口
+2025-02-27 13:33:06,824 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:33:06,831 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:33:08,346 - logger - INFO - 当前索引:0
+2025-02-27 13:33:08,346 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:33:08,346 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:33:08,358 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:33:08,358 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:33:08,358 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:33:08,358 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:33:08,362 - logger - INFO - 设置索引:0
+2025-02-27 13:33:09,438 - logger - INFO - 下拉框1当前选择的串口:COM18
+2025-02-27 13:33:09,438 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001BD5D222F80>
+2025-02-27 13:33:09,443 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:33:09,443 - logger - DEBUG - log_list: Port1打开串口成功
+2025-02-27 13:36:16,842 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:16,842 - logger - DEBUG - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox1
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox2
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox3
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox4
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox5
+2025-02-27 13:36:16,844 - logger - DEBUG - 绑定事件combo_box_name=comboBox6
+2025-02-27 13:36:19,759 - logger - INFO - 当前索引:0
+2025-02-27 13:36:19,759 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:36:19,759 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:19,770 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:19,770 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:19,770 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:36:19,770 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:19,779 - logger - INFO - 设置索引:0
+2025-02-27 13:36:21,865 - logger - INFO - 当前索引:0
+2025-02-27 13:36:21,865 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:36:21,865 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:21,875 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:21,875 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:21,875 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:36:21,875 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:21,882 - logger - INFO - 设置索引:0
+2025-02-27 13:36:22,690 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:36:22,690 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80E9AEE60>
+2025-02-27 13:36:22,690 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:36:22,690 - logger - DEBUG - log_list: Port1打开串口COM16成功
+2025-02-27 13:36:24,151 - logger - INFO - 当前索引:1
+2025-02-27 13:36:24,156 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:36:24,179 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:36:24,211 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:24,211 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:24,211 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:36:24,211 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:24,219 - logger - INFO - 下拉框1当前选择的串口:COM16
+2025-02-27 13:36:24,219 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD2C20>
+2025-02-27 13:36:24,220 - logger - INFO - 设置索引:1
+2025-02-27 13:36:24,232 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:36:24,248 - logger - DEBUG - log_list: Port1打开串口COM16成功
+2025-02-27 13:36:25,571 - logger - INFO - 下拉框1当前选择的串口:COM18
+2025-02-27 13:36:25,571 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD2DD0>
+2025-02-27 13:36:25,602 - logger - DEBUG - 串口COM16已关闭
+2025-02-27 13:36:25,606 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:36:25,607 - logger - DEBUG - log_list: Port1打开串口COM18成功
+2025-02-27 13:36:26,734 - logger - INFO - 当前索引:2
+2025-02-27 13:36:26,744 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:36:26,759 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:26,766 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 13:36:26,823 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:26,824 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:26,824 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:36:26,824 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:26,824 - logger - INFO - 下拉框1当前选择的串口:COM18
+2025-02-27 13:36:26,824 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD2EF0>
+2025-02-27 13:36:26,824 - logger - INFO - 设置索引:2
+2025-02-27 13:36:26,839 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:36:26,849 - logger - DEBUG - log_list: Port1打开串口COM18成功
+2025-02-27 13:36:27,946 - logger - INFO - 下拉框1当前选择的串口:COM17
+2025-02-27 13:36:27,946 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD30A0>
+2025-02-27 13:36:27,957 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:27,965 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:27,972 - logger - DEBUG - 串口COM18已关闭
+2025-02-27 13:36:27,977 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:36:27,978 - logger - DEBUG - log_list: Port1打开串口COM17成功
+2025-02-27 13:36:28,962 - logger - INFO - 当前索引:3
+2025-02-27 13:36:28,962 - logger - INFO - 下拉框1当前选择的串口:
+2025-02-27 13:36:28,970 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:28,984 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:28,991 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:36:29,094 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:29,094 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:29,095 - logger - INFO - 下拉框1当前选择的串口:close
+2025-02-27 13:36:29,095 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:29,096 - logger - INFO - 下拉框1当前选择的串口:COM17
+2025-02-27 13:36:29,096 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD31C0>
+2025-02-27 13:36:29,097 - logger - INFO - 设置索引:3
+2025-02-27 13:36:29,114 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:36:29,126 - logger - DEBUG - log_list: Port1打开串口COM17成功
+2025-02-27 13:36:30,402 - logger - INFO - 下拉框1当前选择的串口:COM4
+2025-02-27 13:36:30,402 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD3250>
+2025-02-27 13:36:30,433 - logger - DEBUG - 接收数据时出错: ClearCommError failed (OSError(9, '句柄无效。', None, 6))
+2025-02-27 13:36:30,436 - logger - DEBUG - 串口COM17已关闭
+2025-02-27 13:36:35,621 - logger - DEBUG - 打开串口 COM4 失败: could not open port 'COM4': OSError(22, '信号灯超时时间已到', None, 121)
+2025-02-27 13:36:35,621 - logger - DEBUG - log_list: Port1打开串口COM4失败，请检查连接是否被占用
+2025-02-27 13:36:47,109 - logger - INFO - 当前索引:0
+2025-02-27 13:36:47,109 - logger - INFO - 下拉框6当前选择的串口:
+2025-02-27 13:36:47,109 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:47,122 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:47,122 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:47,122 - logger - INFO - 下拉框6当前选择的串口:close
+2025-02-27 13:36:47,122 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:47,126 - logger - INFO - 设置索引:0
+2025-02-27 13:36:48,166 - logger - INFO - 下拉框6当前选择的串口:COM15
+2025-02-27 13:36:48,166 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD3370>
+2025-02-27 13:36:48,170 - logger - DEBUG - 成功打开串口: COM15
+2025-02-27 13:36:48,173 - logger - DEBUG - log_list: Port6打开串口COM15成功
+2025-02-27 13:36:48,927 - logger - INFO - 当前索引:0
+2025-02-27 13:36:48,937 - logger - INFO - 下拉框5当前选择的串口:
+2025-02-27 13:36:48,937 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:48,937 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:48,937 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:48,948 - logger - INFO - 下拉框5当前选择的串口:close
+2025-02-27 13:36:48,948 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:48,950 - logger - INFO - 设置索引:0
+2025-02-27 13:36:49,970 - logger - INFO - 下拉框5当前选择的串口:COM17
+2025-02-27 13:36:49,970 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD3520>
+2025-02-27 13:36:49,972 - logger - DEBUG - 成功打开串口: COM17
+2025-02-27 13:36:49,975 - logger - DEBUG - log_list: Port5打开串口COM17成功
+2025-02-27 13:36:50,780 - logger - INFO - 当前索引:0
+2025-02-27 13:36:50,780 - logger - INFO - 下拉框4当前选择的串口:
+2025-02-27 13:36:50,780 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:50,789 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:50,789 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:50,797 - logger - INFO - 下拉框4当前选择的串口:close
+2025-02-27 13:36:50,797 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:50,799 - logger - INFO - 设置索引:0
+2025-02-27 13:36:52,032 - logger - INFO - 下拉框4当前选择的串口:COM18
+2025-02-27 13:36:52,032 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD36D0>
+2025-02-27 13:36:52,032 - logger - DEBUG - 成功打开串口: COM18
+2025-02-27 13:36:52,036 - logger - DEBUG - log_list: Port4打开串口COM18成功
+2025-02-27 13:36:52,932 - logger - INFO - 当前索引:0
+2025-02-27 13:36:52,932 - logger - INFO - 下拉框3当前选择的串口:
+2025-02-27 13:36:52,932 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:52,949 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:52,949 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:52,950 - logger - INFO - 下拉框3当前选择的串口:close
+2025-02-27 13:36:52,950 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:52,952 - logger - INFO - 设置索引:0
+2025-02-27 13:36:54,133 - logger - INFO - 下拉框3当前选择的串口:COM16
+2025-02-27 13:36:54,133 - logger - DEBUG - 创建打开串口子线程<controller.OpenSerialThread object at 0x000001E80EAD39A0>
+2025-02-27 13:36:54,133 - logger - DEBUG - 成功打开串口: COM16
+2025-02-27 13:36:54,133 - logger - DEBUG - log_list: Port3打开串口COM16成功
+2025-02-27 13:36:55,080 - logger - INFO - 当前索引:0
+2025-02-27 13:36:55,080 - logger - INFO - 下拉框2当前选择的串口:
+2025-02-27 13:36:55,080 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:55,097 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:55,097 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:55,099 - logger - INFO - 下拉框2当前选择的串口:close
+2025-02-27 13:36:55,099 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:55,100 - logger - INFO - 设置索引:0
+2025-02-27 13:36:57,549 - logger - INFO - 当前索引:0
+2025-02-27 13:36:57,551 - logger - INFO - 下拉框2当前选择的串口:
+2025-02-27 13:36:57,551 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:57,560 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:57,561 - logger - INFO - 可用串口:['COM16', 'COM18', 'COM17', 'COM15', 'COM4']
+2025-02-27 13:36:57,561 - logger - INFO - 下拉框2当前选择的串口:close
+2025-02-27 13:36:57,561 - logger - DEBUG - 没有打开的串口
+2025-02-27 13:36:57,563 - logger - INFO - 设置索引:0
+2025-02-27 13:37:06,199 - logger - DEBUG - log_list: 暂停
+2025-02-27 13:37:08,703 - logger - DEBUG - log_list: 继续

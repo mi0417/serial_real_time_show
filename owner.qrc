@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="/">
+    <file>QSS_IMG/go-down-symbolic.symbolic.png</file>
+    <file>QSS_IMG/go-next-symbolic.symbolic.png</file>
+    <file>QSS_IMG/go-previous-symbolic.symbolic.png</file>
+    <file>QSS_IMG/go-up-symbolic.symbolic.png</file>
+    <file>QSS_IMG/object-select-symbolic.symbolic.png</file>
+    <file>imgs/24gf-pause2 (2).png</file>
+    <file>imgs/24gf-pause2.png</file>
+    <file>imgs/24gf-play (1).png</file>
+    <file>imgs/24gf-play.png</file>
+    <file>imgs/Luxshare_BCS.png</file>
+    <file>imgs/功率 (1).png</file>
+  </qresource>
+</RCC>
