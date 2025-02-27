@@ -15,6 +15,7 @@ class SerialView(QWidget):
 
     def __init__(self, title, myappid, icon_path):
         super().__init__()
+        self.controller = None
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.setWindowTitle(title)
@@ -34,13 +35,29 @@ class SerialView(QWidget):
         # 连接信号和槽
         self.ui.pushButton.clicked.connect(self.switch_stop_button)
 
+    def change_portlabel_color(self, index, status):
+        '''
+            改变portlabel的颜色
+            index: 控件序号
+            status: 状态，True为绿色，False为黑色
+        '''
+        try:
+            line_name = f'portLabel{index}'
+            line = self.findChild(QLabel, line_name)
+            if status:
+                line.setStyleSheet('color: #006633;')
+            else:
+                line.setStyleSheet('color: #272727;')
+        except:
+            logger.debug('portLabel%d不存在', index)
+
     def set_led(self, index, status):
         try:
             led_name = f'ledLabel{index}'
             led = self.findChild(QLabel, led_name)
             led.setStyleSheet(self.return_led_qss(status))
         except:
-            logger.debug(f'ledLabel{index}不存在')
+            logger.debug('ledLabel%d不存在', index)
     
     def set_line_data(self, qline_name, index, value):
         '''
@@ -58,7 +75,7 @@ class SerialView(QWidget):
                 line = self.findChild(QLineEdit, line_name)
                 line.setText(str(value))
             except:
-                logger.debug(f'{qline_name}{index}不存在，写值{value}失败')
+                logger.debug('%s%d不存在，写值%s失败', qline_name, index, value)
 
     def switch_stop_button(self):
         '''
@@ -108,4 +125,13 @@ class SerialView(QWidget):
                 item.setForeground(QColor('red'))
             log_list_widget.addItem(item)
             log_list_widget.scrollToBottom()
-            logger.debug(f'log_list: {message}')
+            logger.debug('log_list: %s', message)
+    
+    def closeEvent(self, event):
+        try:
+            self.controller.cleanup()
+            logger.debug("Controller ID in SerialView: %s", id(self.controller))
+            logger.debug('程序退出')
+        except Exception as e:
+            logger.error('关闭事件处理时发生错误: %s', e)
+        event.accept()

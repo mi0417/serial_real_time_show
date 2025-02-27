@@ -11,6 +11,7 @@ class SerialOperator:
     串口操作类
     '''
     def __init__(self):
+        self.id = id(self)
         self._ser = None
         self._is_open = False
         self._opened_port = None
@@ -50,6 +51,7 @@ class SerialOperator:
         :return: 若成功打开串口，返回 True；若打开失败，返回 False
         '''
         if self._is_open and self._opened_port == port:
+            logger.debug('串口 %s 已经打开', port)
             # 如果该实体已经打开了这个串口，无需重复操作
             return True
         try:
@@ -57,19 +59,19 @@ class SerialOperator:
                 # 如果该实体已经打开了其他串口，先关闭它
                 self.close_serial_port()
             self._ser = serial.Serial(port, baudrate, timeout=timeout)
-            logger.debug(f'成功打开串口: {port}')
+            logger.debug('成功打开串口: %s', port)
             self._is_open = True
             self._opened_port = port
             return True
         except serial.SerialException as e:
-            logger.debug(f'打开串口 {port} 失败: {e}')
+            logger.debug('打开串口 %s 失败: %s', port, e)
             return False
         
 
     def close_serial_port(self):
         if self._ser and self._is_open:
             self._ser.close()
-            logger.debug(f'串口{self._opened_port}已关闭')
+            logger.debug('串口%s已关闭', self._opened_port)
         else:
             logger.debug('没有打开的串口')
         self._is_open = False
@@ -81,10 +83,10 @@ class SerialOperator:
                 data = data.encode()
             try:
                 bytes_sent = self._ser.write(data)
-                logger.debug(f'已发送 {bytes_sent} 字节数据: {data}')
+                logger.debug('已发送 %d 字节数据: %s', bytes_sent, data)
                 return bytes_sent
             except serial.SerialException as e:
-                logger.debug(f'发送数据时出错: {e}')
+                logger.debug('发送数据时出错: %s', e)
         return 0
 
     def receive_data(self, size=None):
@@ -95,10 +97,10 @@ class SerialOperator:
                 else:
                     data = self._ser.read(size)
                 if data:
-                    logger.debug(f'接收到 {len(data)} 字节数据: {data}')
+                    logger.debug('接收到 %d 字节数据: %s', len(data), data)
                 return data
             except serial.SerialException as e:
-                logger.debug(f'接收数据时出错: {e}')
+                logger.debug('接收数据时出错: %s', e)
         return b''
 
 

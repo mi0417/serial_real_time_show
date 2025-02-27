@@ -13,13 +13,13 @@ class MyComboBoxControl(QComboBox):
     def showPopup(self):  
         # 获取原选项
         index = self.currentIndex()
-        logger.info(f'当前索引:{index}')
+        logger.info('当前索引:%d', index)
         font_metrics = QFontMetrics(self.font())
         # 先清空原有的选项
         self.clear()
         # 初始化串口列表
         available_ports = SerialOperator().list_available_ports()
-        logger.info(f'可用串口:{available_ports}')
+        logger.info('可用串口:%s', available_ports)
         # 添加关闭串口选项
         self.addItem('close')
         for port in available_ports:
@@ -32,5 +32,5 @@ class MyComboBoxControl(QComboBox):
 
         if self.count() >= index:
             self.setCurrentIndex(index)
-            logger.info(f'设置索引:{index}')
+            logger.info('重置串口数据，设置索引:%d', index)
         QComboBox.showPopup(self)   # 弹出选项框  
