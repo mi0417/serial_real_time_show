@@ -77,13 +77,26 @@ QLineEdit#curEdit1:focus, QLineEdit#curEdit2:focus, QLineEdit#curEdit3:focus, QL
     border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #b7e385, stop:1 #c1db9e);
 }
 QLineEdit#powEdit1, QLineEdit#powEdit2, QLineEdit#powEdit3, QLineEdit#powEdit4, QLineEdit#powEdit5, QLineEdit#powEdit6 {
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #cfcfcf, stop:1 #dddddd);
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #cfcfcf, stop:1 #dddddd);
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #cfcfcf, stop:1 #dddddd);
+    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #cfcfcf, stop:1 #dddddd);
+    color: darkgray;
+}
+QLineEdit#powEdit1:focus, QLineEdit#powEdit2:focus, QLineEdit#powEdit3:focus, QLineEdit#powEdit4:focus, QLineEdit#powEdit5:focus, QLineEdit#powEdit6:focus {
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #e3e3e3, stop:1 #dbdbdb);
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #e3e3e3, stop:1 #dbdbdb);
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #e3e3e3, stop:1 #dbdbdb);
+    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #e3e3e3, stop:1 #dbdbdb);
+}
+QLineEdit#curPowEdit1, QLineEdit#curPowEdit2, QLineEdit#curPowEdit3, QLineEdit#curPowEdit4, QLineEdit#curPowEdit5, QLineEdit#curPowEdit6 {
     border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #cfc1c9, stop:1 #ddd2d8);
     border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #cfc1c9, stop:1 #ddd2d8);
     border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #cfc1c9, stop:1 #ddd2d8);
     border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #cfc1c9, stop:1 #ddd2d8);
     color: darkred;
 }
-QLineEdit#powEdit1:focus, QLineEdit#powEdit2:focus, QLineEdit#powEdit3:focus, QLineEdit#powEdit4:focus, QLineEdit#powEdit5:focus, QLineEdit#powEdit6:focus {
+QLineEdit#curPowEdit1:focus, QLineEdit#curPowEdit2:focus, QLineEdit#curPowEdit3:focus, QLineEdit#curPowEdit4:focus, QLineEdit#curPowEdit5:focus, QLineEdit#curPowEdit6:focus {
     border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #e38588, stop:1 #db9e97);
     border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #e38588, stop:1 #db9e97);
     border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #e38588, stop:1 #db9e97);

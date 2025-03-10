@@ -41,12 +41,12 @@ class SerialOperator:
         ports = serial.tools.list_ports.comports()
         return [port.device for port in ports]
 
-    def open_serial_port(self, port, baudrate=9600, timeout=1):
+    def open_serial_port(self, port, baudrate=115200, timeout=1):
         '''
         打开指定的串口。如果该串口已经打开，则先关闭它再重新打开。
 
         :param port: 要打开的串口号，例如 'COM3' 或 '/dev/ttyUSB0'
-        :param baudrate: 串口通信的波特率，默认为 9600
+        :param baudrate: 串口通信的波特率，默认为 115200
         :param timeout: 串口操作的超时时间，单位为秒，默认为 1 秒
         :return: 若成功打开串口，返回 True；若打开失败，返回 False
         '''
@@ -59,14 +59,17 @@ class SerialOperator:
                 # 如果该实体已经打开了其他串口，先关闭它
                 self.close_serial_port()
             self._ser = serial.Serial(port, baudrate, timeout=timeout)
-            logger.debug('成功打开串口: %s', port)
-            self._is_open = True
-            self._opened_port = port
-            return True
+            if self._ser.is_open:
+                logger.debug('成功打开串口: %s', port)
+                self._is_open = True
+                self._opened_port = port
+                return True
+            else:
+                logger.debug('打开串口 %s 失败', port)
+                return False
         except serial.SerialException as e:
             logger.debug('打开串口 %s 失败: %s', port, e)
             return False
-        
 
     def close_serial_port(self):
         if self._ser and self._is_open:
@@ -83,10 +86,11 @@ class SerialOperator:
                 data = data.encode()
             try:
                 bytes_sent = self._ser.write(data)
-                logger.debug('已发送 %d 字节数据: %s', bytes_sent, data)
+                logger.debug('已发送 %d 字节数据: [%s]', bytes_sent, SerialOperator.byte_array_to_hex_string(data))
                 return bytes_sent
             except serial.SerialException as e:
-                logger.debug('发送数据时出错: %s', e)
+                logger.debug('发送数据时出错: %s，尝试重新开关串口', e)
+                self.serial_reopen()
         return 0
 
     def receive_data(self, size=None):
@@ -97,11 +101,43 @@ class SerialOperator:
                 else:
                     data = self._ser.read(size)
                 if data:
-                    logger.debug('接收到 %d 字节数据: %s', len(data), data)
+                    logger.debug('接收到 %d 字节数据: [%s]', len(data), SerialOperator.byte_array_to_hex_string(data))
                 return data
             except serial.SerialException as e:
-                logger.debug('接收数据时出错: %s', e)
+                logger.debug('接收数据时出错: %s，尝试重新开关串口', e)
+                self.serial_reopen()
+                    
         return b''
+
+    def serial_reopen(self):
+        '''
+        重新打开串口（收发异常时尝试）
+        '''
+        if self._ser and self._opened_port:
+            port = self._opened_port
+            self.close_serial_port()
+            return self.open_serial_port(port)
+        else:
+            logger.debug('没有打开的串口')
+
+    @staticmethod
+    def byte_array_to_hex_string(byte_array):
+        '''
+        将字节数组转换为 XX XX XX 格式的十六进制字符串。
+
+        Args:
+            byte_array (bytes): 字节数组
+
+        Returns:
+            str: XX XX XX 格式的十六进制字符串
+        '''
+        if not isinstance(byte_array, (bytes, bytearray)):
+            logger.error('Invalid byte array: %s', byte_array)
+            return None
+        hex_str = byte_array.hex()
+        # 在每两个字符之间插入空格
+        formatted_hex_str = ' '.join(hex_str[i:i+2] for i in range(0, len(hex_str), 2))
+        return formatted_hex_str
 
 
 # 假设要处理 2 个固定的串口

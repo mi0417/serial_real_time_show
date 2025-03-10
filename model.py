@@ -10,31 +10,74 @@ from logger import logger
 class SerialModel:
     def __init__(self):
         logger.debug("Serial ID in SerialModel: %s", id(self))
-        self.last_receive_time = [time.time()] * 6  # 为每个串口初始化时间戳
-        self.serials = [SerialOperator() for _ in range(6)]
+        self.last_receive_time = time.time()  # 为每个串口初始化时间戳
+        self.serial = SerialOperator()
         # self.data_callbacks = [None] * 6
 
     def get_all_serials(self):
         return SerialOperator().list_available_ports()
 
-    def open_serial_port(self, index, port_name, baudrate, timeout):
-        self.last_receive_time[index - 1] = time.time()  # 更新时间戳
-        return self.serials[index - 1].open_serial_port(port_name, baudrate, timeout)
+    def open_serial_port(self, port_name):
+        self.last_receive_time = time.time()  # 更新时间戳
+        return self.serial.open_serial_port(port_name)
 
-    def close_serial_port(self, index):
-        self.serials[index - 1].close_serial_port()
+    def close_serial_port(self):
+        self.serial.close_serial_port()
 
-    def is_serial_open(self, index):
-        return self.serials[index - 1].is_open
+    def is_serial_open(self):
+        return self.serial.is_open
 
-    def receive_data(self, index):
-        
+    def receive_data(self):
+        '''
+        接收数据。
+        '''
         # TODO 这里是模拟数据
         # data = self.generate_mock_data()
-        data = self.serials[index - 1].receive_data()
+        data = self.serial.receive_data()
         if data:
-            self.last_receive_time[index - 1] = time.time()  # 更新时间戳
+            self.last_receive_time = time.time()  # 更新时间戳
         return data
+        
+    def receive_data_with_message(self, data_size):
+        '''
+        接收数据。
+        '''
+        def update_timestamp():
+            # 封装更新时间戳的逻辑
+            self.last_receive_time = time.time()
+
+        def check_data_length(data, expected_size):
+            # 检查数据长度并记录日志
+            if len(data) == expected_size or data == b'':
+                return None
+            elif len(data) > expected_size:
+                logger.warning("接收到的数据长度超过预期，预期长度: %d，实际长度: %d", expected_size, len(data))
+                return 'receive data length is too long, please check your serial port'
+            else:
+                logger.warning("接收到的数据长度不足，预期长度: %d，实际长度: %d", expected_size, len(data))
+                return 'receive data length is too short, please check your serial port'
+
+        # 第一次接收数据
+        data = self.serial.receive_data()
+        message = None
+        if data:
+            update_timestamp()
+            message = check_data_length(data, data_size)
+            if message:
+                return None, message
+
+            # 如果第一次接收的数据长度不够，再接收一次
+            remaining_size = data_size - len(data)
+            if remaining_size > 0:
+                second_data = self.serial.receive_data(remaining_size)
+                if second_data:
+                    update_timestamp()
+                    data += second_data
+                    message = check_data_length(data, data_size)
+                    if message:
+                        return None, message
+
+        return data, message
 
     # def register_data_callback(self, index, callback):
     #     '''

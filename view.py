@@ -5,13 +5,15 @@
 '''
 import ctypes
 from PyQt5.QtGui import QIcon, QPixmap, QColor
-from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QListWidgetItem
+from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QListWidgetItem, QPushButton, QComboBox
 from Ui_horizontal2 import Ui_Form
 
 from logger import logger
 
 class SerialView(QWidget):
     MAX_LOG_ITEMS = 100  # 设定最大日志项数
+    BTN_CONNECT = 'connect'
+    BTN_DISCONNECT = 'disconnect'
 
     def __init__(self, title, myappid, icon_path):
         super().__init__()
@@ -32,11 +34,31 @@ class SerialView(QWidget):
         for i in range(1,7):
             self.set_led(i, False)
 
+        self.ui.connectButton1.setText(self.BTN_CONNECT)
+        self.ui.connectButton2.setText(self.BTN_CONNECT)
+
         # 连接信号和槽
         self.ui.pushButton.clicked.connect(self.switch_stop_button)
+        self.ui.clearButton.clicked.connect(self.clean_data_edits)
+        
+        self.ui.serialBox1.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox1))
+        self.ui.serialBox2.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox2))
+
+    def clean_data_edits(self):
+        '''清空数据框'''
+        for i in range(1, 7):
+            self.set_line_data(self.findChild(QLineEdit, f'volEdit{i}'), '')
+            self.set_line_data(self.findChild(QLineEdit, f'curEdit{i}'), '')
+            self.set_line_data(self.findChild(QLineEdit, f'powEdit{i}'), '')
+            self.set_line_data(self.findChild(QLineEdit, f'curPowEdit{i}'), '')
+        self.log_message('清空数据')
 
     def change_portlabel_color(self, index, status):
         '''
+        更改实现方式，弃用
+            改变portlabel的颜色
+            index: 控件序号
+            status: 状态，True为绿色，False为黑色
             改变portlabel的颜色
             index: 控件序号
             status: 状态，True为绿色，False为黑色
@@ -52,6 +74,11 @@ class SerialView(QWidget):
             logger.debug('portLabel%d不存在', index)
 
     def set_led(self, index, status):
+        '''
+            改变led的颜色
+            index: 控件序号
+            status: 状态，True为绿色，False为红色
+        '''
         try:
             led_name = f'ledLabel{index}'
             led = self.findChild(QLabel, led_name)
@@ -59,23 +86,37 @@ class SerialView(QWidget):
         except:
             logger.debug('ledLabel%d不存在', index)
     
-    def set_line_data(self, qline_name, index, value):
+    def set_line_data(self, line_edit: QLineEdit, value):
         '''
             向界面的QLineEdit中写值（电压，电流，功率）
-            qline_name: 控件名称 
-            index: 控件序号
+            line_edit: QLineEdit 控件
             value: 行值
 
-            示例: 向powEdit1中写值12
-            self.set_line_data('powEdit', 1, 12)
+            示例: 向 powEdit1 中写值 12
+            pow_edit_1 = self.findChild(QLineEdit, 'powEdit1')
+            self.set_line_data(pow_edit_1, 12)
         '''
-        if self.update_date:
+        # update_date 为True时，才更新数据
+        if self.update_date or value == '':
             try:
-                line_name = f'{qline_name}{index}'
-                line = self.findChild(QLineEdit, line_name)
-                line.setText(str(value))
+                line_edit.setText(str(value))
             except:
-                logger.debug('%s%d不存在，写值%s失败', qline_name, index, value)
+                logger.debug('向控件写值 %s 失败', value)
+
+    def show_selected_combobox(self, combobox:QComboBox):
+        '''
+        显示选择的combobox的内容
+        '''
+        selected_index = combobox.currentIndex()
+        selected_input = combobox.currentText()
+        if selected_input:
+            logger.debug('Selected %s: %d - %s', combobox.objectName(), selected_index, selected_input)
+
+    def change_button_text(self, button:QPushButton, text):
+        '''
+        改变按钮的文本
+        '''
+        button.setText(text)
 
     def switch_stop_button(self):
         '''
@@ -130,7 +171,7 @@ class SerialView(QWidget):
     def closeEvent(self, event):
         try:
             self.controller.cleanup()
-            logger.debug("Controller ID in SerialView: %s", id(self.controller))
+            # logger.debug("Controller ID in SerialView: %s", id(self.controller))
             logger.debug('程序退出')
         except Exception as e:
             logger.error('关闭事件处理时发生错误: %s', e)

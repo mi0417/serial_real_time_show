@@ -21,7 +21,7 @@ class MyComboBoxControl(QComboBox):
         available_ports = SerialOperator().list_available_ports()
         logger.info('可用串口:%s', available_ports)
         # 添加关闭串口选项
-        self.addItem('close')
+        # self.addItem('close')
         for port in available_ports:
             self.addItem(port)
 
@@ -30,7 +30,7 @@ class MyComboBoxControl(QComboBox):
             if previous_width < width:
                 self.view().setFixedWidth(width)
 
-        if self.count() >= index:
-            self.setCurrentIndex(index)
-            logger.info('重置串口数据，设置索引:%d', index)
+        # if self.count() >= index:
+        #     self.setCurrentIndex(index)
+        #     logger.info('重置串口数据，设置索引:%d', index)
         QComboBox.showPopup(self)   # 弹出选项框  
