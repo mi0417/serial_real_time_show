@@ -1,0 +1,2 @@
+# serial_real_time_show
+一个迷你的mvc架构的串口解析和数据展示工具，pyqt5
