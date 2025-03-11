@@ -4,11 +4,46 @@
     并与controller之间传递数据
 '''
 import ctypes
-from PyQt5.QtGui import QIcon, QPixmap, QColor
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import QIcon, QPixmap, QColor, QGuiApplication, QFontMetrics
 from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QListWidgetItem, QPushButton, QComboBox
-from Ui_horizontal2 import Ui_Form
 
+from Ui_horizontal import Ui_Form
+
+#导入串口模块
+from serial_handle import SerialOperator
 from logger import logger
+
+class MyComboBoxControl(QComboBox):
+
+    def __init__(self, parent = None):
+        super(MyComboBoxControl,self).__init__(parent) #调用父类初始化方法
+
+    # 重写showPopup函数
+    def showPopup(self):  
+        # 获取原选项
+        index = self.currentIndex()
+        logger.info('当前索引:%d', index)
+        font_metrics = QFontMetrics(self.font())
+        # 先清空原有的选项
+        self.clear()
+        # 初始化串口列表
+        available_ports = SerialOperator().list_available_ports()
+        logger.info('可用串口:%s', available_ports)
+        # 添加关闭串口选项
+        # self.addItem('close')
+        for port in available_ports:
+            self.addItem(port)
+
+            width = font_metrics.width(port) + 10
+            previous_width = self.width()
+            if previous_width < width:
+                self.view().setFixedWidth(width)
+
+        # if self.count() >= index:
+        #     self.setCurrentIndex(index)
+        #     logger.info('重置串口数据，设置索引:%d', index)
+        QComboBox.showPopup(self)   # 弹出选项框  
 
 class SerialView(QWidget):
     MAX_LOG_ITEMS = 100  # 设定最大日志项数
@@ -17,9 +52,12 @@ class SerialView(QWidget):
 
     def __init__(self, title, myappid, icon_path):
         super().__init__()
+        # QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling) # 适应windows缩放
+        # QtGui.QGuiApplication.setAttribute(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough) # 设置支持小数放大比例（适应如125%的缩放比）
         self.controller = None
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
         self.setWindowTitle(title)
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
         self.setWindowIcon(QIcon(icon_path))
@@ -30,12 +68,19 @@ class SerialView(QWidget):
         '''
             初始化
         '''
+        # 字体尺寸从pt转为px，为了适配不同DPI
+        # self.convert_fonts_to_pixel_size(96)
+
         # 初始化界面控件
         for i in range(1,7):
             self.set_led(i, False)
 
         self.ui.connectButton1.setText(self.BTN_CONNECT)
         self.ui.connectButton2.setText(self.BTN_CONNECT)
+
+        # 重写QComboBox
+        self.ui.serialBox1 = self.replace_combo_box(self.ui.serialBox1, self)
+        self.ui.serialBox2 = self.replace_combo_box(self.ui.serialBox2, self)
 
         # 连接信号和槽
         self.ui.pushButton.clicked.connect(self.switch_stop_button)
@@ -44,6 +89,72 @@ class SerialView(QWidget):
         self.ui.serialBox1.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox1))
         self.ui.serialBox2.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox2))
 
+    def resizeEvent(self, a0):
+        super().resizeEvent(a0)
+        width = self.width()
+        # TODO 根据DPI调整
+        screen = QGuiApplication.primaryScreen()
+        dpi = screen.logicalDotsPerInchY()
+        if dpi > 120:
+            if width >= 1920:
+                self.ui.powLabel.setText('Max Power(W)')
+                self.ui.curPowLabel.setText('Current Power(W)')
+            else:
+                self.ui.powLabel.setText('Max\nPower(W)')
+                self.ui.curPowLabel.setText('Current\nPower(W)')
+        else:
+            if width >= 1440:
+                self.ui.powLabel.setText('Max Power(W)')
+                self.ui.curPowLabel.setText('Current Power(W)')
+            else:
+                self.ui.powLabel.setText('Max\nPower(W)')
+                self.ui.curPowLabel.setText('Current\nPower(W)')
+        
+        # 输出窗口改变后的宽高
+        logger.info('当前DPI：%d，窗口改变后宽度: %d, 窗口改变后高度: %d', dpi, self.width(), self.height())
+
+        return super().resizeEvent(a0)
+    
+    def convert_fonts_to_pixel_size(self, dpi):
+        # 遍历所有子控件
+        for widget in self.findChildren((QLabel, QPushButton, QLineEdit)):
+            font = widget.font()
+            point_size = font.pointSize()
+            if point_size > 0:
+                # 将 pointSize 转换为像素大小
+                pixel_size = int(point_size * dpi / 72)
+                # 设置新的字体像素大小
+                font.setPixelSize(pixel_size)
+            widget.setFont(font)
+
+    def replace_combo_box(self, original_combo:QComboBox, parent):
+        if original_combo:
+            combo = MyComboBoxControl(parent)
+            combo.setGeometry(original_combo.geometry())
+            combo.addItems([original_combo.itemText(i) for i in range(original_combo.count())])
+            combo.setMinimumSize(original_combo.minimumSize())
+            combo.setMaximumSize(original_combo.maximumSize())
+            combo.setFont(original_combo.font())
+            combo.setInputMethodHints(original_combo.inputMethodHints())
+            combo.setObjectName(original_combo.objectName())
+        else:
+            combo = MyComboBoxControl(parent)
+            combo.setMinimumSize(QtCore.QSize(180, 25))
+            combo.setMaximumSize(QtCore.QSize(200, 16777215))
+            font = QtGui.QFont()
+            font.setFamily('微软雅黑')
+            font.setPointSize(20)
+            combo.setFont(font)
+            combo.setInputMethodHints(QtCore.Qt.ImhEmailCharactersOnly | QtCore.Qt.ImhNoAutoUppercase)
+            combo.setObjectName('serialBox1')
+
+        # 替换原有的 QComboBox
+        if original_combo.parent().layout():
+            index = original_combo.parent().layout().indexOf(original_combo)
+            original_combo.parent().layout().removeWidget(original_combo)
+            original_combo.parent().layout().insertWidget(index, combo)
+        return combo
+    
     def clean_data_edits(self):
         '''清空数据框'''
         for i in range(1, 7):
@@ -51,7 +162,7 @@ class SerialView(QWidget):
             self.set_line_data(self.findChild(QLineEdit, f'curEdit{i}'), '')
             self.set_line_data(self.findChild(QLineEdit, f'powEdit{i}'), '')
             self.set_line_data(self.findChild(QLineEdit, f'curPowEdit{i}'), '')
-        self.log_message('清空数据')
+        self.log_message('Data cleared') # ('清空数据')
 
     def change_portlabel_color(self, index, status):
         '''
@@ -127,10 +238,10 @@ class SerialView(QWidget):
         # 切换图标路径
         if self.update_date:
             button_icon_path = ':imgs/24gf-play (1).png'
-            log_message = '暂停'
+            log_message = 'Pause' # '暂停'
         else:
             button_icon_path = ':/imgs/24gf-pause2.png'
-            log_message = '继续'
+            log_message = 'Resume' # '继续'
         # 更新图标
         icon = QIcon()
         icon.addPixmap(QPixmap(button_icon_path), QIcon.Normal, QIcon.Off)
@@ -171,7 +282,7 @@ class SerialView(QWidget):
     def closeEvent(self, event):
         try:
             self.controller.cleanup()
-            # logger.debug("Controller ID in SerialView: %s", id(self.controller))
+            # logger.debug('Controller ID in SerialView: %s', id(self.controller))
             logger.debug('程序退出')
         except Exception as e:
             logger.error('关闭事件处理时发生错误: %s', e)

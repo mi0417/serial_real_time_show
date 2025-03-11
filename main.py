@@ -11,7 +11,7 @@ from common_helper import CommonHelper
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    controller = SerialController('实时电压电流功率显示', 'serial', ':/imgs/功率 (1).png')
+    controller = SerialController('Multi-interface monitor', 'serial', ':/imgs/功率 (1).png')
     qssStyle = CommonHelper.readQss(CommonHelper.resource_path('MacOS.qss'))
     controller.view.setStyleSheet(qssStyle)
     controller.show()

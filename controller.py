@@ -181,7 +181,7 @@ class SerialController(QObject):
             if thread and thread.isRunning():
                 thread.stop()
                 thread.wait()
-                self.view.log_message(f'{serial_name}关闭串口{port_name}')
+                self.view.log_message(f'{serial_name} Serial port {port_name} is closed') # (f'{serial_name}关闭串口{port_name}')
                 logger.info('%s 已关闭串口 %s', serial_name, port_name)
             # 串口断开后，设置下拉框可编辑
             button.setText(SerialView.BTN_CONNECT)
@@ -241,14 +241,14 @@ class SerialController(QObject):
         if success:
             button.setText(SerialView.BTN_DISCONNECT)
             combobox.setEnabled(False)
-            self.view.log_message(f'{serial_name}打开串口{port_name}成功')
+            self.view.log_message(f'{serial_name} Serial port {port_name} is opened')   # (f'{serial_name}打开串口{port_name}成功')
             logger.info('%s 已打开串口 %s', serial_name, port_name)
         else:
             if button.text() == SerialView.BTN_DISCONNECT:
-                message = f'{serial_name}串口{port_name}断开连接'
+                message =  f'{serial_name} Serial port {port_name} is disconnected' # f'{serial_name}串口{port_name}断开连接'
                 self.view.log_message(message)
             else:
-                message = f'{serial_name}打开串口{port_name}失败，请检查连接是否被占用'
+                message = f'{serial_name} Failed to open serial port {port_name}, please check if the connection is occupied' # f'{serial_name}打开串口{port_name}失败，请检查连接是否被占用'
                 self.view.log_message(message, True)
 
             button.setText(SerialView.BTN_CONNECT)
@@ -359,12 +359,14 @@ class SerialController(QObject):
                 last_time = thread.model.last_receive_time
                 current_time = time.time()
                 if current_time - last_time < timeout_threshold:
+                    if not flags[0]:
+                        self.view.log_message(f'{thread.name} received data within {timeout_threshold}s') # (f'{thread.name}在{timeout_threshold}s内接收到数据')
                     flags[0] = True
                     for index in led_indices:
                         self.view.set_led(index, True)
                 else:
                     if flags[0]:
-                        self.view.log_message(f'{thread.name}未在{timeout_threshold}s内接收到数据，请检查连接', True)
+                        self.view.log_message(f'{thread.name} did not receive data within {timeout_threshold}s, please check the connection', True) # (f'{thread.name}未在{timeout_threshold}s内接收到数据，请检查连接', True)
                         flags[0] = False
                         logger.debug('串口 %s last_time: %s, current_time: %s, %ds 内未接收到数据', thread.name, last_time,
                                      current_time, timeout_threshold)
@@ -373,11 +375,12 @@ class SerialController(QObject):
             else:
                 for index in led_indices:
                     self.view.set_led(index, False)
+            return flags[0]
 
         # 检查 10 字节数据的线程
-        check_thread(self.thread_10, [self.receive_thread_10_flag], [1, 2, 5, 6])
+        self.receive_thread_10_flag = check_thread(self.thread_10, [self.receive_thread_10_flag], [1, 2, 5, 6])
         # 检查 6 字节数据的线程
-        check_thread(self.thread_6, [self.receive_thread_6_flag], [3, 4])
+        self.receive_thread_6_flag = check_thread(self.thread_6, [self.receive_thread_6_flag], [3, 4])
 
     def cleanup(self):
         logger.debug('Controller %d clean up', id(self))

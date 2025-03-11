@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1160</width>
-    <height>925</height>
+    <width>1167</width>
+    <height>885</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>160</height>
+       <height>180</height>
       </size>
      </property>
      <property name="font">
@@ -52,7 +52,7 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>60</height>
+          <height>80</height>
          </size>
         </property>
         <property name="font">
@@ -69,7 +69,7 @@
          <string notr="true">background-image: null;</string>
         </property>
         <property name="text">
-         <string>多接口电压电流监控系统</string>
+         <string>Multi-interface monitoring System</string>
         </property>
         <property name="textFormat">
          <enum>Qt::PlainText</enum>
@@ -324,7 +324,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QGridLayout" name="gridLayout" rowstretch="3,2,2,2,2,2,2" columnstretch="1,0,1,0,1,0,2,0,2,0,2,0" rowminimumheight="0,0,0,0,0,0,0" columnminimumwidth="2,0,1,0,1,0,2,0,2,0,2,0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="3,2,2,2,2,2,2" columnstretch="1,0,1,0,2,0,2,0,2,0,2,0" columnminimumwidth="2,0,1,0,2,0,2,0,2,0,2,0">
      <property name="leftMargin">
       <number>10</number>
      </property>
@@ -338,7 +338,7 @@
       <number>20</number>
      </property>
      <property name="horizontalSpacing">
-      <number>0</number>
+      <number>5</number>
      </property>
      <property name="verticalSpacing">
       <number>40</number>
@@ -486,7 +486,7 @@
        </layout>
       </widget>
      </item>
-     <item row="2" column="8">
+     <item row="2" column="10">
       <widget class="QWidget" name="widget_11" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_15">
         <property name="topMargin">
@@ -586,8 +586,52 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="8">
-      <widget class="QLabel" name="label_7">
+     <item row="1" column="6">
+      <widget class="QWidget" name="widget_32" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_34">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit1">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="10">
+      <widget class="QLabel" name="curLabel">
        <property name="font">
         <font>
          <family>微软雅黑</family>
@@ -647,7 +691,7 @@
        </layout>
       </widget>
      </item>
-     <item row="6" column="6">
+     <item row="6" column="8">
       <widget class="QWidget" name="widget_22" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_13">
         <property name="topMargin">
@@ -742,7 +786,7 @@
        </layout>
       </widget>
      </item>
-     <item row="3" column="6">
+     <item row="3" column="8">
       <widget class="QWidget" name="widget_13" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <property name="topMargin">
@@ -786,6 +830,50 @@
        </layout>
       </widget>
      </item>
+     <item row="5" column="6">
+      <widget class="QWidget" name="widget_36" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_38">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit5">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="Line" name="line_6">
        <property name="orientation">
@@ -793,7 +881,7 @@
        </property>
       </widget>
      </item>
-     <item row="5" column="8">
+     <item row="5" column="10">
       <widget class="QWidget" name="widget_20" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_18">
         <property name="topMargin">
@@ -838,23 +926,24 @@
       </widget>
      </item>
      <item row="0" column="4">
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="powLabel">
        <property name="font">
         <font>
          <family>微软雅黑</family>
          <pointsize>22</pointsize>
-         <bold>false</bold>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>MaxPower(W)</string>
+        <string>Max
+Power(W)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="1" column="8">
+     <item row="1" column="10">
       <widget class="QWidget" name="widget_8" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_14">
         <property name="topMargin">
@@ -941,7 +1030,14 @@
        </layout>
       </widget>
      </item>
-     <item row="4" column="6">
+     <item row="0" column="7">
+      <widget class="Line" name="line_7">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="8">
       <widget class="QWidget" name="widget_16" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <property name="topMargin">
@@ -1048,7 +1144,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="8">
+     <item row="3" column="10">
       <widget class="QWidget" name="widget_14" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_16">
         <property name="topMargin">
@@ -1132,7 +1228,7 @@
        </layout>
       </widget>
      </item>
-     <item row="1" column="6">
+     <item row="1" column="8">
       <widget class="QWidget" name="widget_7" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_8">
         <property name="topMargin">
@@ -1177,6 +1273,24 @@
          </widget>
         </item>
        </layout>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QLabel" name="curPowLabel">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>22</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Current
+Power(W)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item row="1" column="4">
@@ -1307,7 +1421,7 @@
        </layout>
       </widget>
      </item>
-     <item row="2" column="6">
+     <item row="2" column="8">
       <widget class="QWidget" name="widget_10" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <property name="topMargin">
@@ -1351,7 +1465,7 @@
        </layout>
       </widget>
      </item>
-     <item row="5" column="6">
+     <item row="5" column="8">
       <widget class="QWidget" name="widget_19" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_12">
         <property name="topMargin">
@@ -1395,7 +1509,7 @@
        </layout>
       </widget>
      </item>
-     <item row="6" column="8">
+     <item row="6" column="10">
       <widget class="QWidget" name="widget_23" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_19">
         <property name="topMargin">
@@ -1483,8 +1597,8 @@
        </layout>
       </widget>
      </item>
-     <item row="0" column="6">
-      <widget class="QLabel" name="label_6">
+     <item row="0" column="8">
+      <widget class="QLabel" name="volLabel">
        <property name="font">
         <font>
          <family>微软雅黑</family>
@@ -1501,7 +1615,7 @@
       </widget>
      </item>
      <item row="0" column="2">
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="statusLabel">
        <property name="font">
         <font>
          <family>微软雅黑</family>
@@ -1517,6 +1631,94 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="6">
+      <widget class="QWidget" name="widget_34" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_36">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="6">
+      <widget class="QWidget" name="widget_37" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_39">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit6">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
      <item row="2" column="4">
       <widget class="QWidget" name="widget_12" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -1528,6 +1730,94 @@
         </property>
         <item>
          <widget class="QLineEdit" name="powEdit2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="6">
+      <widget class="QWidget" name="widget_33" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_35">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>22</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="6">
+      <widget class="QWidget" name="widget_35" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_37">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="curPowEdit4">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -1577,7 +1867,47 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="8">
+     <item row="1" column="2">
+      <widget class="QWidget" name="widget_25" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_26">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="ledLabel1">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="10">
       <widget class="QWidget" name="widget_17" native="true">
        <layout class="QHBoxLayout" name="horizontalLayout_17">
         <property name="topMargin">
@@ -1621,7 +1951,7 @@
        </layout>
       </widget>
      </item>
-     <item row="0" column="7">
+     <item row="0" column="9">
       <widget class="Line" name="line_4">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -1644,46 +1974,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QWidget" name="widget_25" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_26">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>9</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="ledLabel1">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
      <item row="4" column="0">
       <widget class="QLabel" name="portLabel4">
        <property name="font">
@@ -1698,294 +1988,6 @@
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="9">
-      <widget class="Line" name="line_7">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="10">
-      <widget class="QLabel" name="label_9">
-       <property name="font">
-        <font>
-         <family>微软雅黑</family>
-         <pointsize>22</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Power(W)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="10">
-      <widget class="QWidget" name="widget_32" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_34">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit1">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="2" column="10">
-      <widget class="QWidget" name="widget_33" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_35">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit2">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="3" column="10">
-      <widget class="QWidget" name="widget_34" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_36">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit3">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="4" column="10">
-      <widget class="QWidget" name="widget_35" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_37">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit4">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="5" column="10">
-      <widget class="QWidget" name="widget_36" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_38">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit5">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="6" column="10">
-      <widget class="QWidget" name="widget_37" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_39">
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="curPowEdit6">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>70</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>22</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
       </widget>
      </item>
      <item row="0" column="11">
