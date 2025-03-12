@@ -4,10 +4,9 @@
     并与controller之间传递数据
 '''
 import ctypes
-from PyQt5 import QtCore, QtGui
-from PyQt5.QtGui import QIcon, QPixmap, QColor, QGuiApplication, QFontMetrics
+from PyQt5.QtGui import QIcon, QPixmap, QColor, QGuiApplication, QFontMetrics, QFont
 from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QListWidgetItem, QPushButton, QComboBox
-
+from PyQt5.QtCore import QEvent, Qt, QSize
 from Ui_horizontal import Ui_Form
 
 #导入串口模块
@@ -68,8 +67,7 @@ class SerialView(QWidget):
         '''
             初始化
         '''
-        # 字体尺寸从pt转为px，为了适配不同DPI
-        # self.convert_fonts_to_pixel_size(96)
+        self.change_font_size()
 
         # 初始化界面控件
         for i in range(1,7):
@@ -89,11 +87,17 @@ class SerialView(QWidget):
         self.ui.serialBox1.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox1))
         self.ui.serialBox2.currentIndexChanged.connect(lambda: self.show_selected_combobox(self.ui.serialBox2))
 
+    # def changeEvent(self, a0):
+    #     logger.info('changeEvent: %s', a0.type())
+    #     # if a0.type() == QEvent.ScreenChanged:
+    #     self.change_font_size()
+    #     super().changeEvent(a0)
+
     def resizeEvent(self, a0):
         super().resizeEvent(a0)
         width = self.width()
-        # TODO 根据DPI调整
-        screen = QGuiApplication.primaryScreen()
+        # 根据DPI调整
+        screen = self.window().screen()
         dpi = screen.logicalDotsPerInchY()
         if dpi > 120:
             if width >= 1920:
@@ -110,17 +114,32 @@ class SerialView(QWidget):
                 self.ui.powLabel.setText('Max\nPower(W)')
                 self.ui.curPowLabel.setText('Current\nPower(W)')
         
+        self.change_font_size()
         # 输出窗口改变后的宽高
         logger.info('当前DPI：%d，窗口改变后宽度: %d, 窗口改变后高度: %d', dpi, self.width(), self.height())
-
-        return super().resizeEvent(a0)
     
+    def change_font_size(self):
+        '''如果dpi>130，按130dpi计算'''
+        screen = self.window().screen()
+        dpi = screen.logicalDotsPerInchY()
+        if dpi > 130:
+            dpi = 130
+        self.convert_fonts_to_pixel_size(dpi)
+
     def convert_fonts_to_pixel_size(self, dpi):
         # 遍历所有子控件
         for widget in self.findChildren((QLabel, QPushButton, QLineEdit)):
             font = widget.font()
-            point_size = font.pointSize()
+            # 尝试从 widget 的属性中获取原始的 pointSize
+            original_point_size = widget.property('original_point_size')
+            if original_point_size is None:
+                # 如果没有保存过，获取当前的 pointSize 并保存
+                original_point_size = font.pointSize()
+                widget.setProperty('original_point_size', original_point_size)
+            point_size = original_point_size
+            # point_size = font.pointSize()
             if point_size > 0:
+                # logger.debug('%s: %d', widget.objectName(), point_size)
                 # 将 pointSize 转换为像素大小
                 pixel_size = int(point_size * dpi / 72)
                 # 设置新的字体像素大小
@@ -139,13 +158,13 @@ class SerialView(QWidget):
             combo.setObjectName(original_combo.objectName())
         else:
             combo = MyComboBoxControl(parent)
-            combo.setMinimumSize(QtCore.QSize(180, 25))
-            combo.setMaximumSize(QtCore.QSize(200, 16777215))
-            font = QtGui.QFont()
+            combo.setMinimumSize(QSize(180, 25))
+            combo.setMaximumSize(QSize(200, 16777215))
+            font = QFont()
             font.setFamily('微软雅黑')
             font.setPointSize(20)
             combo.setFont(font)
-            combo.setInputMethodHints(QtCore.Qt.ImhEmailCharactersOnly | QtCore.Qt.ImhNoAutoUppercase)
+            combo.setInputMethodHints(Qt.ImhEmailCharactersOnly | Qt.ImhNoAutoUppercase)
             combo.setObjectName('serialBox1')
 
         # 替换原有的 QComboBox
@@ -158,10 +177,18 @@ class SerialView(QWidget):
     def clean_data_edits(self):
         '''清空数据框'''
         for i in range(1, 7):
-            self.set_line_data(self.findChild(QLineEdit, f'volEdit{i}'), '')
-            self.set_line_data(self.findChild(QLineEdit, f'curEdit{i}'), '')
-            self.set_line_data(self.findChild(QLineEdit, f'powEdit{i}'), '')
-            self.set_line_data(self.findChild(QLineEdit, f'curPowEdit{i}'), '')
+            vol_edit = self.findChild(QLineEdit, f'volEdit{i}')
+            if vol_edit:
+                vol_edit.setText('')
+            cur_edit = self.findChild(QLineEdit, f'curEdit{i}')
+            if cur_edit:
+                cur_edit.setText('')
+            pow_edit = self.findChild(QLineEdit, f'powEdit{i}')
+            if pow_edit:
+                pow_edit.setText('')
+            cur_pow_edit = self.findChild(QLineEdit, f'curPowEdit{i}')
+            if cur_pow_edit:
+                cur_pow_edit.setText('')
         self.log_message('Data cleared') # ('清空数据')
 
     def change_portlabel_color(self, index, status):
@@ -208,9 +235,11 @@ class SerialView(QWidget):
             self.set_line_data(pow_edit_1, 12)
         '''
         # update_date 为True时，才更新数据
-        if self.update_date or value == '':
+        if self.update_date:
             try:
-                line_edit.setText(str(value))
+                # None 不写入
+                if value is not None:
+                    line_edit.setText(str(value))
             except:
                 logger.debug('向控件写值 %s 失败', value)
 

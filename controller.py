@@ -45,20 +45,21 @@ class SerialThread(QThread):
                 data, message = self.model.receive_data_with_message(self.data_length)
                 if data and len(data) == self.data_length:
                     if self.data_length == self.DATA_10_BYTES:
-                        usb_c1_pow = f'{data[0]}'
-                        usb_c1_vbus_vol = f'{round(data[1] / 10, 1)}'
-                        usb_c1_vbus_cur = f'{round(data[2] / 10, 1)}'
-                        usb_c1_cur_pow = f'{round(data[1] * data[2] / 100, 2)}'
-                        usb_c2_pow = f'{data[3]}'
-                        usb_c2_vbus_vol = f'{round(data[4] / 10, 1)}'
-                        usb_c2_vbus_cur = f'{round(data[5] / 10, 1)}'
-                        usb_c2_cur_pow = f'{round(data[4] * data[5] / 100, 2)}'
-                        usb1_vbus_vol = f'{round(data[6] / 10, 1)}'
-                        usb1_vbus_cur = f'{round(data[7] / 10, 1)}'
-                        usb1_cur_pow = f'{round(data[8] * data[9] / 100, 2)}'
-                        usb2_vbus_vol = f'{round(data[8] / 10, 1)}'
-                        usb2_vbus_cur = f'{round(data[9] / 10, 1)}'
-                        usb2_cur_pow = f'{round(data[8] * data[9] / 100, 2)}'
+                        # FF 255无效值
+                        usb_c1_pow = f'{data[0]}' if data[0] != '\xFF' else None
+                        usb_c1_vbus_vol = f'{round(data[1] / 10, 1)}' if data[1]!= '\xFF' else None
+                        usb_c1_vbus_cur = f'{round(data[2] / 10, 1)}' if data[2]!= '\xFF' else None
+                        usb_c1_cur_pow = f'{round(data[1] * data[2] / 100, 2)}' if data[1]!= '\xFF' and data[2]!= '\xFF' else None
+                        usb_c2_pow = f'{data[3]}' if data[3]!= '\xFF' else None
+                        usb_c2_vbus_vol = f'{round(data[4] / 10, 1)}' if data[4]!= '\xFF' else None
+                        usb_c2_vbus_cur = f'{round(data[5] / 10, 1)}' if data[5]!= '\xFF' else None
+                        usb_c2_cur_pow = f'{round(data[4] * data[5] / 100, 2)}' if data[4]!= '\xFF' and data[5]!= '\xFF' else None
+                        usb1_vbus_vol = f'{round(data[6] / 10, 1)}' if data[6]!= '\xFF' else None
+                        usb1_vbus_cur = f'{round(data[7] / 10, 1)}' if data[7]!= '\xFF' else None
+                        usb1_cur_pow = f'{round(data[8] * data[9] / 100, 2)}' if data[8]!= '\xFF' and data[9]!= '\xFF' else None
+                        usb2_vbus_vol = f'{round(data[8] / 10, 1)}' if data[8]!= '\xFF' else None
+                        usb2_vbus_cur = f'{round(data[9] / 10, 1)}' if data[9]!= '\xFF' else None
+                        usb2_cur_pow = f'{round(data[8] * data[9] / 100, 2)}' if data[8]!= '\xFF' and data[9]!= '\xFF' else None
 
                         # 触发 10 字节数据接收信号
                         self.data_received_10_bytes.emit(
@@ -69,14 +70,14 @@ class SerialThread(QThread):
                         )
                     elif self.data_length == self.DATA_6_BYTES:
                         # 假设这里处理 6 字节数据
-                        usb4_c1_pow = f'{data[0]}'
-                        usb4_c1_vbus_vol = f'{round(data[1] / 10, 1)}'
-                        usb4_c1_vbus_cur = f'{round(data[2] / 10, 1)}'
-                        usb4_c1_cur_pow = f'{round(data[1] * data[2] / 100, 2)}'
-                        usb4_c2_pow = f'{data[3]}'
-                        usb4_c2_vbus_vol = f'{round(data[4] / 10, 1)}'
-                        usb4_c2_vbus_cur = f'{round(data[5] / 10, 1)}'
-                        usb4_c2_cur_pow = f'{round(data[4] * data[5] / 100, 2)}'
+                        usb4_c1_pow = f'{data[0]}' if data[0]!= '\xFF' else None
+                        usb4_c1_vbus_vol = f'{round(data[1] / 10, 1)}' if data[1]!= '\xFF' else None
+                        usb4_c1_vbus_cur = f'{round(data[2] / 10, 1)}' if data[2]!= '\xFF' else None
+                        usb4_c1_cur_pow = f'{round(data[1] * data[2] / 100, 2)}' if data[1]!= '\xFF' and data[2]!= '\xFF' else None
+                        usb4_c2_pow = f'{data[3]}' if data[3]!= '\xFF' else None
+                        usb4_c2_vbus_vol = f'{round(data[4] / 10, 1)}' if data[4]!= '\xFF' else None
+                        usb4_c2_vbus_cur = f'{round(data[5] / 10, 1)}' if data[5]!= '\xFF' else None
+                        usb4_c2_cur_pow = f'{round(data[4] * data[5] / 100, 2)}' if data[4]!= '\xFF' and data[5]!= '\xFF' else None
 
                         # 触发 6 字节数据接收信号
                         self.data_received_6_bytes.emit(
@@ -284,6 +285,8 @@ class SerialController(QObject):
         elif serial_name == SerialThread.DATA_6_SERIAL:
             self.update_ui_and_log(self.view.ui.connectButton2, self.view.ui.serialBox2,
                 serial_name, port_name, result)
+
+    
 
     def handle_received_10_data(self, 
                             usb_c1_pow, usb_c1_vbus_vol, usb_c1_vbus_cur, usb_c1_cur_pow, 
