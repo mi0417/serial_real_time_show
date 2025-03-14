@@ -4,9 +4,9 @@
     并与controller之间传递数据
 '''
 import ctypes
-from PyQt5.QtGui import QIcon, QPixmap, QColor, QGuiApplication, QFontMetrics, QFont
+from PyQt5.QtGui import QIcon, QPixmap, QColor, QFontMetrics, QFont
 from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QListWidgetItem, QPushButton, QComboBox
-from PyQt5.QtCore import QEvent, Qt, QSize
+from PyQt5.QtCore import Qt, QSize
 from Ui_horizontal import Ui_Form
 
 #导入串口模块
@@ -31,13 +31,15 @@ class MyComboBoxControl(QComboBox):
         logger.info('可用串口:%s', available_ports)
         # 添加关闭串口选项
         # self.addItem('close')
+        max_width = 0
         for port in available_ports:
             self.addItem(port)
 
-            width = font_metrics.width(port) + 10
-            previous_width = self.width()
-            if previous_width < width:
-                self.view().setFixedWidth(width)
+            width = font_metrics.width(port) + 20
+            if max_width < width:
+                max_width = width
+        if max_width > self.maximumWidth():
+            self.view().setFixedWidth(width)
 
         # if self.count() >= index:
         #     self.setCurrentIndex(index)
@@ -165,12 +167,14 @@ class SerialView(QWidget):
             font.setPointSize(20)
             combo.setFont(font)
             combo.setInputMethodHints(Qt.ImhEmailCharactersOnly | Qt.ImhNoAutoUppercase)
-            combo.setObjectName('serialBox1')
+            combo.setObjectName('serialBox')
 
         # 替换原有的 QComboBox
         if original_combo.parent().layout():
             index = original_combo.parent().layout().indexOf(original_combo)
             original_combo.parent().layout().removeWidget(original_combo)
+            # 释放原有的 QComboBox 资源
+            original_combo.deleteLater()
             original_combo.parent().layout().insertWidget(index, combo)
         return combo
     

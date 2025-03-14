@@ -56,7 +56,7 @@ class SerialThread(QThread):
                         usb_c2_cur_pow = f'{round(data[4] * data[5] / 100, 2)}' if data[4]!= '\xFF' and data[5]!= '\xFF' else None
                         usb1_vbus_vol = f'{round(data[6] / 10, 1)}' if data[6]!= '\xFF' else None
                         usb1_vbus_cur = f'{round(data[7] / 10, 1)}' if data[7]!= '\xFF' else None
-                        usb1_cur_pow = f'{round(data[8] * data[9] / 100, 2)}' if data[8]!= '\xFF' and data[9]!= '\xFF' else None
+                        usb1_cur_pow = f'{round(data[6] * data[7] / 100, 2)}' if data[6]!= '\xFF' and data[7]!= '\xFF' else None
                         usb2_vbus_vol = f'{round(data[8] / 10, 1)}' if data[8]!= '\xFF' else None
                         usb2_vbus_cur = f'{round(data[9] / 10, 1)}' if data[9]!= '\xFF' else None
                         usb2_cur_pow = f'{round(data[8] * data[9] / 100, 2)}' if data[8]!= '\xFF' and data[9]!= '\xFF' else None
@@ -286,7 +286,7 @@ class SerialController(QObject):
             self.update_ui_and_log(self.view.ui.connectButton2, self.view.ui.serialBox2,
                 serial_name, port_name, result)
 
-    
+
 
     def handle_received_10_data(self, 
                             usb_c1_pow, usb_c1_vbus_vol, usb_c1_vbus_cur, usb_c1_cur_pow, 
@@ -311,6 +311,14 @@ class SerialController(QObject):
         :param usb2_vbus_cur: USB2 电流
         :param usb2_cur_pow: USB2 当前功率       
         '''
+        if None in (usb_c1_pow, usb_c1_vbus_vol, usb_c1_vbus_cur, usb_c1_cur_pow, 
+                    usb_c2_pow, usb_c2_vbus_vol, usb_c2_vbus_cur, usb_c2_cur_pow,
+                    usb1_vbus_vol, usb1_vbus_cur, usb1_cur_pow, 
+                    usb2_vbus_vol, usb2_vbus_cur, usb2_cur_pow):
+            logger.warning("接收到的 10 字节数据中包含 FF 无效值")
+            self.view.log_message(f'{SerialThread.DATA_10_SERIAL} received data contains invalid FF values')
+
+
         self.view.set_line_data(self.view.ui.powEdit1, usb_c1_pow)
         self.view.set_line_data(self.view.ui.volEdit1, usb_c1_vbus_vol)
         self.view.set_line_data(self.view.ui.curEdit1, usb_c1_vbus_cur)
@@ -341,6 +349,11 @@ class SerialController(QObject):
         :param usb4_c2_vbus_vol: USB4-C2 电压
         :param usb4_c2_vbus_cur: USB4-C2 电流
         '''
+        if None in (usb4_c1_pow, usb4_c1_vbus_vol, usb4_c1_vbus_cur, usb4_c1_cur_pow, 
+                            usb4_c2_pow, usb4_c2_vbus_vol, usb4_c2_vbus_cur, usb4_c2_cur_pow):
+            logger.warning("接收到的 10 字节数据中包含 FF 无效值")
+            self.view.log_message(f'{SerialThread.DATA_6_SERIAL} received data contains invalid FF values')
+
         self.view.set_line_data(self.view.ui.powEdit3, usb4_c1_pow)
         self.view.set_line_data(self.view.ui.volEdit3, usb4_c1_vbus_vol)
         self.view.set_line_data(self.view.ui.curEdit3, usb4_c1_vbus_cur)
